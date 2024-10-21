@@ -1,58 +1,75 @@
-# Phase 1 Project: Single Page Application (SPA)
+# Phase 1 Project: PopcornPicks 🎬 "Butter Up Your Film Choices"
 
-## Learning Goals
+## Author
+Brian Gathui
 
-- Design and architect features across a frontend
-- Communicate and collaborate in a technical environment
-- Integrate JavaScript and an external API
-- Debug issues in small- to medium-sized projects
-- Build and iterate on a project MVP
+## Project Description
+PopcornPicks is a single-page web application that allows users to explore a curated collection of popular movies. The app fetches real-time movie data from the OMDB public API and provides a seamless, interactive experience. Users can:
+- Browse trending movies with poster images, titles, and ratings.
+- Search for specific films using the dynamic search bar.
+- Filter movies by genre and sort by popularity or release date.
+- View detailed information about each movie, including synopsis, cast, director, and release date.
+- Toggle between dark and light modes for enhanced viewing (stretch goal).
 
-## Overview
+PopcornPicks is designed to be fully responsive, ensuring optimal performance on devices of all sizes.
 
-For this phase 1 project, you're going to build a Single Page Application (SPA). This project is designed to challenge you to integrate everything you've learned so far. The frontend will be built using HTML, CSS, and JavaScript, and it will communicate with a public API.
+## Key Features
+- **Display Popular Movies**: Automatically fetch and display popular movies from the OMDB API.
 
-## Project Requirements
+- **Search Functionality**: A search bar that dynamically updates the movie list as the user types.
 
-To meet the project requirements, the app must:
+- **Movie Details**: Clicking on a movie reveals additional information, such as the synopsis, cast, and release date.
 
-- Be built with an HTML/CSS/JS frontend that accesses data from a public API or from a `db.json` file using `json-server`.
-- The API or `db.json` file must return a collection of at least 5 objects, with each object having at least 3 attributes.
-- All interactions between the client and the API should be handled asynchronously using JSON as the communication format.
-- The entire app must run on a single page (NO redirects).
-- Include at least 3 distinct event listeners that enable interactivity.
-- Implement at least one instance of array iteration using array methods like `map`, `forEach`, or `filter`.
-- Follow good coding practices, utilizing functions to keep the code DRY (Do not Repeat Yourself).
+- **Filter and Sort**: Users can filter movies by genre and sort them by popularity or release date.
 
-## Setup Instructions
+- **Responsive Design**: Ensures the application looks great on any device, from mobile phones to desktops.
 
-To get started with the project, follow these steps:
+- **Dark/Light Mode (Stretch Goal)**: Users can toggle between dark and light modes to suit their viewing preferences.
 
-1. Clone the repository from GitHub.
-2. Run `npm install` to install any dependencies.
-3. If using `json-server`, create a `db.json` file in the root of your project with your data.
-4. Run the backend with `json-server --watch db.json`.
-5. Use `live-server` or any other local server to serve the frontend and test the application.
-6. Write your JavaScript code in the `index.js` file to interact with the API and the DOM.
+## Installation & Setup Instructions
+### Local Setup
 
-## JSON Server Instructions
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/Brian-K-Gathui/PopcornPicks-Phase-1-Final-Project.git
 
-If you're using `json-server`, you can create a `db.json` file that might look like this:
+2. **Navigate to the project directory**:
+    ```bash
+    cd PopcornPicks
 
-```json
-{
-  "toys": [
-    {
-      "id": 1,
-      "name": "Woody",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 8
-    },
-    {
-      "id": 2,
-      "name": "Buzz Lightyear",
-      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 14
-    }
-  ]
-}
+3. **Open index.html in your browser**:
+    Open the index.html file directly in your browser or run it using a live server extension (e.g., Live Server in VSCode).
+
+### API Key Setup (If applicable)
+You will need an OMDB API key to fetch movie data.  
+Replace `your_api_key` in the fetch URLs within the `app.js` file with your actual OMDB API key.
+
+> **Note**: Never expose your API key publicly. Use environment variables in production setups if needed.
+
+### Usage
+1. Open the app in your browser.
+2. Browse through the list of trending movies on the home page.
+3. Use the search bar to find specific movies.
+4. Click on any movie to view detailed information.
+5. Filter movies by genre or sort them by release date or popularity.
+6. (Optional) Toggle between dark and light modes using the switch (stretch goal).
+
+### Live Demo
+You can view the live site here: [PopcornPicks Demo](https://your-username.github.io/PopcornPicks/)
+
+### Challenges Faced
+
+#### Asynchronous API Handling
+One of the challenges was ensuring that data fetched from the OMDB API was displayed efficiently on the page without affecting the user experience. This was achieved using JavaScript's `fetch()` method with `async`/`await` for better control over asynchronous requests.
+
+#### Dynamic Search and Filtering
+Implementing a real-time search and filtering mechanism that works across all movie data was a key challenge. This required careful handling of the movie data with JavaScript array methods like `filter()` and `map()`.
+
+#### Responsive Design
+Ensuring that the application adapts well across various screen sizes involved tweaking the CSS and testing the app on multiple devices to ensure a smooth user experience.
+
+### Technologies Used
+- **HTML5**: For structuring the content.
+- **CSS3**: For styling and layout.
+- **JavaScript (ES6)**: For interactivity and API communication.
+- **OMDB API**: For fetching movie data.
