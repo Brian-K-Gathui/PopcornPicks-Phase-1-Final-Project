@@ -3,6 +3,52 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&${API_KEY}`;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
+const genres = [
+    { "id": 28, "name": "Action" },
+    { "id": 12, "name": "Adventure" },
+    { "id": 16, "name": "Animation" },
+    // Add the remaining genres here...
+];
+
+const tagsEl = document.getElementById('tags');
+let selectedGenre = [];
+
+setGenres();
+
+function setGenres() {
+    tagsEl.innerHTML = '';
+    genres.forEach(genre => {
+        const tag = document.createElement('div');
+        tag.classList.add('tag');
+        tag.id = genre.id;
+        tag.innerText = genre.name;
+        tag.addEventListener('click', () => {
+            if (selectedGenre.includes(genre.id)) {
+                selectedGenre = selectedGenre.filter(id => id !== genre.id);
+            } else {
+                selectedGenre.push(genre.id);
+            }
+            highlightSelection();
+            getMovies(`${API_URL}&with_genres=${encodeURI(selectedGenre.join(','))}`);
+        });
+        tagsEl.append(tag);
+    });
+}
+
+function highlightSelection() {
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(tag => {
+        tag.classList.remove('highlight');
+    });
+
+    if (selectedGenre.length !== 0) {
+        selectedGenre.forEach(id => {
+            const tag = document.getElementById(id);
+            tag.classList.add('highlight');
+        });
+    }
+}
+
 async function getMovies(url) {
     showLoading();
     const res = await fetch(url);

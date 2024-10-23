@@ -57,6 +57,30 @@ main {
     100% { transform: rotate(360deg); }
 }
 
+#tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.tag {
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 30px;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tag.highlight {
+    background-color: orange;
+}
+
+.tag:hover {
+    background-color: #888;
+}
 
 .movie {
     width: 200px;
