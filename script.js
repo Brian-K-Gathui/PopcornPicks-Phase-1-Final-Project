@@ -44,8 +44,8 @@ function setGenres() {
             } else {
                 selectedGenre.push(genre.id);
             }
-            highlightSelection();
             getMovies(`${API_URL}&with_genres=${encodeURI(selectedGenre.join(','))}`);
+            highlightSelection();
         });
         tagsEl.append(tag);
     });
