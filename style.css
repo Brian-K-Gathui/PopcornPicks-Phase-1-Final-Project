@@ -3,10 +3,9 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
-    padding: 1rem;
-    text-align: center;
+    padding: 20px;
 }
 
 main {
@@ -24,11 +23,13 @@ main {
 .form-wrapper {
     width: 300px;
 }
+
 .search {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #ddd;
+    width: 300px;
 }
 
 .search-icon {
