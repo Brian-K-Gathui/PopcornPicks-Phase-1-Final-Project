@@ -6,34 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PopcornPicks</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/png" href="images/icon.png">
 </head>
 
 <body>
+
     <header>
         <div class="container">
-            <h1 id="app-name">PopcornPicks</h1>
+            <h1 id="app-name">PopcornPicks🍿</h1>
             <form id="form" class="form-wrapper">
                 <input type="text" placeholder="Search movies..." id="search" class="search">
                 <span class="search-icon">
                     <i class="fas fa-search"></i>
                 </span>
             </form>
-
-            <!-- Added below search form -->
-            <div id="loading" class="loading"></div>
-
-            <!-- Below the loading indicator -->
-            <div id="tags"></div>
         </div>
     </header>
-    <!-- Movie details pop-up overlay -->
+
+    <div id="loading" class="loading"></div>
+
+    <div id="tags"></div>
+
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content" id="overlay-content"></div>
+
     </div>
 
     <main id="main"></main>
+
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+    </div>
 
     <script src="script.js"></script>
 </body>
