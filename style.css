@@ -24,21 +24,21 @@ main {
 }
 
 .form-wrapper {
-    width: 300px;
+    position: relative;
+    width: 400px;
 }
 
 .search {
-    background-color: #fff;
-    padding: 10px 20px;
-    border-radius: 50px;
-    border: 2px solid #ddd;
-    width: 300px;
+    padding-right: 40px;
 }
 
 .search-icon {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
 }
 
 .loading {
