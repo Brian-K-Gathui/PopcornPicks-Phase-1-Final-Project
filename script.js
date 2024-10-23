@@ -121,3 +121,24 @@ function showLoading() {
 function hideLoading() {
     loading.style.display = 'none';
 }
+
+function openNav(movieDetails) {
+    const overlayContent = document.getElementById('overlay-content');
+    overlayContent.innerHTML = `
+        <h1>${movieDetails.title}</h1>
+        <p>${movieDetails.overview}</p>
+        <p><strong>Rating:</strong> ${movieDetails.vote_average}</p>
+    `;
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+
+document.querySelectorAll('.movie').forEach(movie => {
+    movie.addEventListener('click', () => {
+        const movieDetails = {}; // Fetch movie details from API or pass stored data
+        openNav(movieDetails);
+    });
+});
