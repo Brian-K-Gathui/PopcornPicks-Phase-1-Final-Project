@@ -6,3 +6,14 @@ form.addEventListener('submit', (e) => {
     const searchTerm = search.value;
     console.log('Search for:', searchTerm);
 });
+
+
+const loading = document.getElementById('loading');
+
+function showLoading() {
+    loading.style.display = 'block';
+}
+
+function hideLoading() {
+    loading.style.display = 'none';
+}
