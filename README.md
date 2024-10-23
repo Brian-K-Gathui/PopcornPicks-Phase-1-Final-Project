@@ -88,8 +88,9 @@ PopcornPicks relies on the TMDB API to fetch movie data. Follow these steps to s
    - Open the `script.js` file located in the root directory of your project.
    - Locate the line containing `const API_KEY = 'your_api_key';`.
    - Replace `'your_api_key'` with your actual TMDB API key:
+
      ```javascript
-     const API_KEY = 'api_key=b8d03025eb5b9f5d50828a3e42ce6342';
+     const API_KEY = 'api_key= your_api_key_is_placed_here';
      const BASE_URL = 'https://api.themoviedb.org/3';
      const API_URL_MOVIES = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
      const IMG_URL = 'https://image.tmdb.org/t/p/w500';
