@@ -1,1 +1,1 @@
-// Code will be placed here
+console.log("PopcornPicks Initialized");
