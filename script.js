@@ -2,6 +2,7 @@ const API_KEY = 'api_key=your_tmdb_api_key';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&${API_KEY}`;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const searchURL = `${BASE_URL}/search/movie?${API_KEY}`;
 
 const genres = [
     { "id": 28, "name": "Action" },
@@ -99,12 +100,17 @@ getMovies(API_URL);
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerm = search.value;
-    console.log('Search for:', searchTerm);
-});
 
+    if (searchTerm) {
+        getMovies(`${searchURL}&query=${searchTerm}`);
+    } else {
+        getMovies(API_URL);
+    }
+});
 
 const loading = document.getElementById('loading');
 
