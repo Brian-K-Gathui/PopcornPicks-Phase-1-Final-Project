@@ -1,4 +1,4 @@
-# PopcornPicks 🎬
+# PopcornPicks 🍿
 **"Butter Up Your Film Choices"**
 
 ## Table of Contents
